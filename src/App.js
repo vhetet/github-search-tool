@@ -16,15 +16,24 @@ function App() {
           setSearchResult(res.items);
         });
     }
-  }
+  };
 
   return (
     <div className="App">
       <h1>Welcome to Github Search</h1>
-      <input type="text" placeholder="type the search keyword here" onChange={({target}) => setSearchKey(target.value)} />
-      <button onClick={() => search()}>Search</button>
+      <div className="search-bar">
+        <input
+          type="text"
+          placeholder="github username"
+          onChange={({ target }) => setSearchKey(target.value)}
+        />
+        <button onClick={() => search()}>Search</button>
+      </div>
       <div className="search-results">
-        {searchResult && searchResult.map((res) => <RepoCard key={res.id} res={res}></RepoCard>)}
+        {searchResult &&
+          searchResult.map((res) => (
+            <RepoCard key={res.id} res={res}></RepoCard>
+          ))}
       </div>
     </div>
   );
