@@ -1,25 +1,30 @@
 import "./App.css";
-import { useState, useEffect } from "react";
+import { useState } from "react";
+import RepoCard from "./components/RepoCard";
 
 function App() {
   const [searchResult, setSearchResult] = useState([]);
-  const [searchKey, setSeasrchKey] = useState("facebook");
+  const [searchKey, setSearchKey] = useState("");
 
-  useEffect(() => {
-    fetch(
-      "https://api.github.com/search/repositories?q=facebook&&s=stars&type=Repositories"
-    )
-      .then((res) => res.json())
-      .then((res) => {
-        setSearchResult(res.items);
-      });
-  }, []);
+  const search = () => {
+    if (searchKey) {
+      fetch(
+        `https://api.github.com/search/repositories?q=user:${searchKey}&&s=stars&type=Repositories`
+      )
+        .then((res) => res.json())
+        .then((res) => {
+          setSearchResult(res.items);
+        });
+    }
+  }
+
   return (
     <div className="App">
       <h1>Welcome to Github Search</h1>
-      <input type="text" placeholder="tpye the search keyword here" />
+      <input type="text" placeholder="type the search keyword here" onChange={({target}) => setSearchKey(target.value)} />
+      <button onClick={() => search()}>Search</button>
       <div className="search-results">
-        {searchResult && searchResult.map((res) => <p>{res.id}</p>)}
+        {searchResult && searchResult.map((res) => <RepoCard key={res.id} res={res}></RepoCard>)}
       </div>
     </div>
   );
