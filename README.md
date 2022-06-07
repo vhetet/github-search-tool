@@ -1,4 +1,6 @@
-# Getting Started with Create React App
+# Github search tool
+
+## Tech notes
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -9,12 +11,7 @@ In the project directory, run:
 * `npm i` to install the dependencies
 * `npm start` to run this app in dev mode. It can be accessed on [http://localhost:3000](http://localhost:3000) (make sure to have the port 3000 available or run it on another port)
 
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-## Notes
+## Requirements notes
 
 The requirements says: `if you were to search for Facebook, you would see the react and react-native repositories at the top of the list`, I first assumed it meant a search by keyword. But I then realized that a search by keyword wouldn't return the expected results. So I changed to a search by username.
 
@@ -25,5 +22,5 @@ The requirements says: `if you were to search for Facebook, you would see the re
 * more search/filter options. As of now the app search for user and sort by stars. It would be very nice to offer more options in the search (search by other criteria or even conbine criterias), and offer sorting options.
 * loading spinner.
 * replace CSS by SCSS, I've done very little styling so CSS was fine but it would allow much better organization of the CSS code. Alternatively I could use styled component. 
-* I consider this a POC, the next steps would be to do some user testing and use the feedback to decide what feature to implement next
+* I consider this a POC, the next steps would be to do some user testing and use the feedback to decide what feature to implement next.
 
