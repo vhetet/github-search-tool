@@ -14,6 +14,9 @@ In the project directory, run:
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
+## Notes
+
+The requirements says: `if you were to search for Facebook, you would see the react and react-native repositories at the top of the list`, I first assumed it meant a search by keyword. But I then realized that a search by keyword wouldn't return the expected results. So I changed to a search by username.
 
 ## Potential improvements
 
@@ -23,3 +26,4 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 * loading spinner.
 * replace CSS by SCSS, I've done very little styling so CSS was fine but it would allow much better organization of the CSS code. Alternatively I could use styled component. 
 * I consider this a POC, the next steps would be to do some user testing and use the feedback to decide what feature to implement next
+
